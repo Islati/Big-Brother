@@ -24,7 +24,7 @@ import TotalLog.Listeners.PlayerLeave;
 public class TotalLog extends JavaPlugin
 {
 	public static DataHandler CommandLogger, MobSpawnLogger, PvpLogger, ChatLogger, CraftLogger, BookLogger,
-	JoinLeaveLogger, PlayerLogger;
+	JoinLeaveLogger, PlayerLogger, ChatFilter;
 	private String DateFolder = "";
 	public static ChatBrother ChatBrother = new ChatBrother();
 	@Override
@@ -36,6 +36,7 @@ public class TotalLog extends JavaPlugin
 		ChatLogger = new DataHandler(getDataFolder() + File.separator + "ChatData.txt");
 		CraftLogger = new DataHandler(getDataFolder() + File.separator + "CraftData.txt");
 		JoinLeaveLogger = new DataHandler(getDataFolder() + File.separator + "JoinLeaveData.txt");
+		ChatFilter = new DataHandler(getDataFolder() + File.separator + "ChatFilter.txt");
 		
 		
 		new AsynchChat(this);

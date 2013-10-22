@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
 import TotalLog.TotalLog;
@@ -17,8 +18,8 @@ import TotalLog.Handler.DataHandler;
 
 public class ChatBrother
 {
-	
 	public String RandomNumberTag = "<RandomNumber>";
+	
 	public ChatBrother()
 	{
 		
@@ -26,6 +27,21 @@ public class ChatBrother
 	
 	public void HandleCommandReminder(Player P, String Command)
 	{
+		
+		if (StartsWith(Command, "/w "))
+		{
+			String PlayerName = StringUtils.substringBetween(Command, "/w ", " ");
+			Player Player = Bukkit.getPlayer(PlayerName);
+			if (Player != null)
+			{
+				Player.playSound(Player.getLocation(), Sound.CAT_MEOW, 1.0f, 1.0f);
+			}
+		}
+		else if (StartsWith(Command, "/msg"))
+		{
+			
+		}
+		
 		if (StartsWith(Command,"/spawnmob") || StartsWith(Command,"/spawner"))
 		{
 			String Addition = "";

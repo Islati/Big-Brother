@@ -20,7 +20,7 @@ public class CraftEvent implements Listener
 	{
 		try
 		{
-			TotalLog.Write(Event.getWhoClicked().getName() + " crafted a(n) " + Event.getInventory().getResult().getType().toString() + " at location [" + Event.getWhoClicked().getLocation().getX() + "," + Event.getWhoClicked().getLocation().getY() + "," + Event.getWhoClicked().getLocation().getZ() + "]", TotalLog.Log.Craft,(Player)Event.getWhoClicked());
+			TotalLog.Write(Event.getWhoClicked().getName() + " crafted a(n) " + Event.getInventory().getResult().getType().name() + " at location [" + Event.getWhoClicked().getLocation().getX() + "," + Event.getWhoClicked().getLocation().getY() + "," + Event.getWhoClicked().getLocation().getZ() + "]", TotalLog.Log.Craft,(Player)Event.getWhoClicked());
 	
 		}
 		catch (NullPointerException Ex)

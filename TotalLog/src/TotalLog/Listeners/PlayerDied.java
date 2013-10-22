@@ -21,8 +21,7 @@ public class PlayerDied implements Listener
 		try
 		{
 			String Name = Event.getEntity().getName();
-			String CauseOfDeath = Event.getEntity().getLastDamageCause().toString();
-			TotalLog.Write(Name + " died; Cause of Death = " + CauseOfDeath + " [DeathMessage] ->" + Event.getDeathMessage(), TotalLog.Log.PVP,Event.getEntity());
+			TotalLog.Write(Name + " died; [DeathMessage] ->" + Event.getDeathMessage(), TotalLog.Log.PVP,Event.getEntity());
 		}
 		catch (Exception Ex)
 		{

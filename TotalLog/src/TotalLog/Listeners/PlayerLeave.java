@@ -19,7 +19,10 @@ public class PlayerLeave implements Listener
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void LeaveEvent(PlayerQuitEvent Event)
 	{
-		TotalLog.ChatBrother.HandleQuit(Event.getPlayer());
+		if (TotalLog.ChatBrother.PercentCheck(6))
+		{
+			TotalLog.ChatBrother.HandleQuit(Event.getPlayer());
+		}
 		TotalLog.Write(Event.getPlayer().getName() + " Quit the game from " + Event.getPlayer().getAddress().getAddress().toString(), TotalLog.Log.Leave,Event.getPlayer());
 	}
 }
